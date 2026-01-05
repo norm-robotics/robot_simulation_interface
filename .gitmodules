@@ -1,0 +1,6 @@
+[submodule "24InchRobotCode"]
+	path = vex-code/24InchRobotCode
+	url = https://github.com/norm-robotics/24InchRobotCode.git
+[submodule "15InchRobotCode"]
+	path = vex-code/15InchRobotCode
+	url = https://github.com/norm-robotics/15InchRobotCode.git
