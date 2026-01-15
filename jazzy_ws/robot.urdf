@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="xdrive2">
+  <joint name="RevoluteJoint_04" type="continuous">
+    <origin xyz="-0.0339281 -0.1248346 -0.0281475" rpy="0. 0. 0."/>
+    <parent link="outake_link"/>
+    <child link="outake_roller_link_01"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="RevoluteJoint_05" type="continuous">
+    <origin xyz="-0.0289139 -0.0617824 -0.0147888" rpy="0. 0. 0."/>
+    <parent link="outake_link"/>
+    <child link="outake_roller_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="back_left_wheel_joint" type="continuous">
+    <origin xyz="-0.1343344 -0.1385737 0.0869201" rpy="0. 0. 2.3561945"/>
+    <parent link="chassis_link"/>
+    <child link="back_left_wheel"/>
+    <axis xyz="0. 1. 0."/>
+  </joint>
+  <joint name="back_right_wheel_joint" type="continuous">
+    <origin xyz="0.1343067 -0.1385737 0.0868693" rpy="3.1415927 0. 0.7853982"/>
+    <parent link="chassis_link"/>
+    <child link="back_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026"/>
+    <axis xyz="0. 1. 0."/>
+  </joint>
+  <joint name="chassis_link_RevoluteJoint" type="continuous">
+    <origin xyz="0.080294 0.1016985 0.3158499" rpy="0. 0. 0."/>
+    <parent link="chassis_link"/>
+    <child link="x_drive_base_roller_link_roller_link_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="chassis_link_RevoluteJoint_01" type="continuous">
+    <origin xyz="0.2161592 0.0608086 0.1040292" rpy="0. 0. 0."/>
+    <parent link="chassis_link"/>
+    <child link="loader_emptier_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="chassis_link_RevoluteJoint_02" type="continuous">
+    <origin xyz="0.0886556 -0.1013394 0.2136612" rpy="0. 0. 0."/>
+    <parent link="chassis_link"/>
+    <child link="X_Intake_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="chassis_link_RevoluteJoint_03" type="continuous">
+    <origin xyz="0.0908344 0.1012256 0.4561273" rpy="0. 0. 0."/>
+    <parent link="chassis_link"/>
+    <child link="outake_link"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="-0.1343344 0.137494 0.0868693" rpy="3.1415927 0. -2.3561945"/>
+    <parent link="chassis_link"/>
+    <child link="front_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026"/>
+    <axis xyz="0. 1. 0."/>
+  </joint>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0.1343067 0.137494 0.0869201" rpy="0. 0. -0.7853982"/>
+    <parent link="chassis_link"/>
+    <child link="front_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026"/>
+    <axis xyz="0. 1. 0."/>
+  </joint>
+  <joint name="outake_link_RevoluteJoint_01" type="continuous">
+    <origin xyz="-0.1476935 -0.2846096 -0.0625226" rpy="-3.1415925 1.1300012 -1.5707963"/>
+    <parent link="outake_link"/>
+    <child link="flap"/>
+    <axis xyz="0. 1. 0."/>
+  </joint>
+  <joint name="outake_link_RevoluteJoint_02" type="continuous">
+    <origin xyz="-0.0279495 -0.2478968 -0.0538554" rpy="0. 0. 0."/>
+    <parent link="outake_link"/>
+    <child link="outake_roller_link_03"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="outake_link_RevoluteJoint_03" type="continuous">
+    <origin xyz="-0.0390167 -0.186097 -0.0409654" rpy="0. 0. 0."/>
+    <parent link="outake_link"/>
+    <child link="outake_roller_link_02"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <joint name="rootJoint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="x_drive_base"/>
+    <child link="chassis_link"/>
+  </joint>
+  <link name="X_Intake_link">
+    <visual>
+      <origin xyz="-0.0886556 0.1013394 -0.2136612" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Intake.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0886556 0.1013394 -0.2136612" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Intake.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="back_left_wheel">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0561846"/>
+      <inertia ixx="0.0000319" ixy="0." ixz="-0." iyy="0.000032" iyz="-0." izz="0.0000596"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/back_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/back_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="back_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026">
+    <inertial>
+      <origin xyz="0. -0. -0." rpy="0. 0. 0."/>
+      <mass value="0.0561846"/>
+      <inertia ixx="0.0000319" ixy="-0." ixz="0." iyy="0.000032" iyz="0." izz="0.0000596"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. -0. -0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/back_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. -0. -0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/back_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="chassis_link">
+    <inertial>
+      <origin xyz="-0.0064223 0.0032271 0.1438236" rpy="0. 0. 0."/>
+      <mass value="8.0526781"/>
+      <inertia ixx="0.1700864" ixy="-0.0030148" ixz="-0.0089423" iyy="0.201736" iyz="-0.0237281" izz="0.2143053"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Pillow_Block_Bearing_276_2016_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Pillow_Block_Bearing_276_2016.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Full_Drive.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Part_1_27.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/chassis_link_Part_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Pillow_Block_Bearing_276_2016_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Pillow_Block_Bearing_276_2016.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Full_Drive.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Part_1_27.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/chassis_link_Part_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="flap">
+    <inertial>
+      <origin xyz="0.0422987 -0.0560804 0.0130347" rpy="0. 0. 0."/>
+      <mass value="0.0488059"/>
+      <inertia ixx="0.0000924" ixy="0.0000024" ixz="0.000023" iyy="0.0000562" iyz="0.0000007" izz="0.0000613"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.001474 -0.0008511 -0.0067726" rpy="-2.950873 -1.073474 2.9821234"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Part_1_17_Part_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.001474 -0.0008511 -0.0067726" rpy="-2.950873 -1.073474 2.9821234"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/Part_1_17_Part_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026">
+    <inertial>
+      <origin xyz="0. 0. -0." rpy="0. 0. 0."/>
+      <mass value="0.0561846"/>
+      <inertia ixx="0.0000319" ixy="-0." ixz="0." iyy="0.000032" iyz="-0." izz="0.0000596"/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. -0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/front_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. -0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/front_left_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026">
+    <inertial>
+      <origin xyz="-0. -0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0561846"/>
+      <inertia ixx="0.0000319" ixy="-0." ixz="0." iyy="0.000032" iyz="-0." izz="0.0000596"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. -0. 0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/front_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. -0. 0." rpy="0. 0. 0.0000001"/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/front_right_wheel__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026__25_Anti_Static_Omni_Directional_Wheel_260mm_Travel_276_8026.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="loader_emptier_link">
+    <inertial>
+      <origin xyz="0.0111478 0.2418836 0.0953983" rpy="0. 0. 0."/>
+      <mass value="0.5428614"/>
+      <inertia ixx="0.004542" ixy="0.0004837" ixz="-0.0000129" iyy="0.0161159" iyz="-0.0000705" izz="0.0205922"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.2161592 -0.0608086 -0.1040292" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/loader_emptier.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.2161592 -0.0608086 -0.1040292" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/loader_emptier.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="outake_link">
+    <inertial>
+      <origin xyz="-0.0032006 -0.0504059 0.3889125" rpy="0. 0. 0."/>
+      <mass value="1.2594005"/>
+      <inertia ixx="0.0092471" ixy="0.0010251" ixz="-0.0002768" iyy="0.0065298" iyz="0.0000231" izz="0.0115825"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0908344 -0.1012256 -0.4561273" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Outake.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0908344 -0.1012256 -0.4561273" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/X_Outake.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="outake_roller_link">
+    <inertial>
+      <origin xyz="-0.0061024 0.0395671 0.4421758" rpy="0. 0. 0."/>
+      <mass value="0.0839977"/>
+      <inertia ixx="0.0000428" ixy="0.000028" ixz="-0.0000001" iyy="0.0000597" iyz="0." izz="0.0000806"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0619205 -0.0394432 -0.4413385" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0619205 -0.0394432 -0.4413385" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="outake_roller_link_01">
+    <inertial>
+      <origin xyz="0.0014702 -0.0226474 0.4288222" rpy="0. 0. 0."/>
+      <mass value="0.0997441"/>
+      <inertia ixx="0.0000493" ixy="0.0000399" ixz="-0.0000001" iyy="0.0000928" iyz="0.0000001" izz="0.0001161"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0569063 0.023609 -0.4279798" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0569063 0.023609 -0.4279798" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="outake_roller_link_02">
+    <inertial>
+      <origin xyz="0.0007112 -0.0845675 0.4154103" rpy="0. 0. 0."/>
+      <mass value="0.0974543"/>
+      <inertia ixx="0.0000372" ixy="-0.0000298" ixz="0.0000001" iyy="0.0001002" iyz="0." izz="0.0001123"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0518178 0.0848714 -0.4151619" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0518178 0.0848714 -0.4151619" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="outake_roller_link_03">
+    <inertial>
+      <origin xyz="-0.0060784 -0.146768 0.4021981" rpy="0. 0. 0."/>
+      <mass value="0.0868739"/>
+      <inertia ixx="0.0000428" ixy="0.000028" ixz="0.0000002" iyy="0.0000615" iyz="-0.0000001" izz="0.0000816"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.062885 0.1466712 -0.4022719" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.062885 0.1466712 -0.4022719" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/roller_05.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="x_drive_base"/>
+  <link name="x_drive_base_roller_link_roller_link_link">
+    <visual>
+      <origin xyz="-0.080294 -0.1016985 -0.3158499" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/x_drive_base_roller_link_roller_link.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.080294 -0.1016985 -0.3158499" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="file:///home/nitin-5090/Documents/DevEnv/jazzy_ws/robot_simulation_interface/jazzy_ws/meshes/x_drive_base_roller_link_roller_link.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
